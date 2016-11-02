@@ -34,28 +34,46 @@ a {
   background-color: #bad6ef;
   border-radius: 8px;
   border: 1px #3f6586 solid;
-  padding: 4px 10px;
+  padding: 6px 10px;
   margin: 10px 0 0 0;
+  width: 200px;
 }
 .button:hover {
   color: #bad6ef;
   background-color: #2e74b0;
 }
-.text_field {
+.field, .qmark {
+  display: inline;
+}
+.qmark {
+  font-weight: 600;
+  font-size: 26px;
+  padding: 0 8px 0 0;
+}
+
+/*---------- Form Elements ------------*/
+.field {
   font-family: 'Libre Franklin', sans-serif;
+  font-size: 16px;
+  max-width: 220px;
+}
+.field_input {
+  box-sizing: border-box;
   font-size: 16px;
   color: #2e74b0;
   background-color: #eee;
   border-radius: 8px;
   border: 1px #3f6586 solid;
-  padding: 4px 10px;
-  margin: 10px 0 0 0;
+  padding: 6px 10px;
+  width: 200px;
+  margin-right: 10px;
+
 }
-.form_caption, .qmark {
-  display: inline;
+.field_input:valid {
+  top: 15px;
+  margin-top: -15px;
 }
-.qmark {
-  font-weight: 600;
-  font-size: 24px;
-  padding: 0 20px 0 20px;
+
+.field_input:focus {
+  border-bottom-color: #2996cc;
 }

@@ -18,10 +18,16 @@
         <div class="answer">
 
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-                
-                <p class="form_caption">First word: <input class="text_field" type="text" name="word1"></p>
-                <p class="qmark">?</p>
-                <p class="form_caption">Second word: <input class="text_field" type="text" name="word2"></p>
+
+                <div class="field">
+                    <input class="field_input" type="text" required placeholder="First word..." id="form-name" name="word1">
+                </div>
+
+                <div class="qmark">?</div>
+
+                <div class="field">
+                    <input class="field_input" type="text" required placeholder="Second word..." id="form-name" name="word2">
+                </div>
                 
                 <p><input class="button" type="submit" value="Check if Anagram"></p>
             
