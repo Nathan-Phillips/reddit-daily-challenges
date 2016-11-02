@@ -31,37 +31,31 @@
 
         // Sanitise input
         function check_input($data){
-            $data = trim( preg_replace( "/[^0-9a-z]+/i", "", $data ) );
-            $data = trim($data); // Strip unnecessary characters (extra space, tab, newline) from user input
             $data = stripslashes($data); // Remove backslashes (\) from user input
             $data = htmlspecialchars($data); // Save as HTML escaped code
             return $data;
         }
 
         // Sort strings for comparison
-        function stringSort($string){
+        function string_sort($string){
+            $string = trim( preg_replace( '/[^0-9a-z]+/i', '', $string ) ); // Strip unnecessary characters (extra space, tab, newline) from user input
             $string = str_split(strtolower($string)); // Change string to all lowercase, split into an array
             sort($string); // Sort the array in ascending order
             return implode('', $string); // Turn the array back into a string
         }
-        
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $original_string1 = $_POST[word1];
-            $original_string2 = $_POST[word2];
+            $orig_str1 = $_POST[word1];
+            $orig_str2 = $_POST[word2];
         }
 
-        
+        $str1 = string_sort($orig_str1);
+        $str2 = string_sort($orig_str2);
 
-        echo $string1 . '<br>' . $string2 . '<br>';
-
-        $str1 = stringSort($string1);
-        $str2 = stringSort($string2);
-
-        if(strcasecmp($str1, $str2) === 0){
-            echo $string1 . ' IS an anagram of ' . $string2;
+        if(! strcasecmp($str1, $str2)){ // If strcasecmp == false (ie: 0)
+            echo $orig_str1 . ' IS an anagram of ' . $orig_str2;
         } else {
-            echo $string1 . ' is NOT an anagram of ' . $string2;
+            echo $orig_str1 . ' is NOT an anagram of ' . $orig_str2;
         }
             
         ?>
