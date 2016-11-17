@@ -24,8 +24,12 @@
             print_r($array);
             echo '</pre>';
         }
+        
+        //String used for writing and testing code (uncomment to use)
+        //$input_string = '100 80 30 50 130 75 90 60 150 85 120 70 200 200 110 100';
 
-        $input_string = "100 80 30 50 130 75 90 60 150 85 120 70 200 200 110 100";
+        //Actual task challenge string
+        $input_string = '100 120 297 90 66 110 257 113 276 191 280 129 219 163 254 193 86 153 206 147 71 137 104 40 238 127 52 146 129 197 144 59 157 124 210 59 11 54 268 119 261 121 12 189 186 108 174 21 77 18 54 90 174 52 16 129 59 181 290 123 248 132';
 
         //Convert the string to an array
         $input_array = explode(' ', $input_string); 
@@ -36,6 +40,7 @@
 
         //Initialise vars for later use
         $parameters = [];
+        $safe_chairs = [];
         $wgt = 0;
         $tmp = 0;
         $i = $j = 0;
@@ -86,6 +91,7 @@
             //Display which chair positions are safe to sit at
             if($wgt === 1 && $tmp === 1){
                 echo '<p>Chair ' . $chair . ' is safe to sit at.</p>';
+                array_push($safe_chairs, $chair);
                 $wgt = $tmp = 0;
             } else {
                 echo '<p>Chair ' . $chair . ' is not safe to sit at.</p>';
@@ -94,7 +100,8 @@
 
             $j++;
         }   
-            
+        
+        print_array($safe_chairs); 
         ?>
         </div>
         
