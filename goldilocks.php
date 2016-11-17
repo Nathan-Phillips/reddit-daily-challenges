@@ -101,7 +101,9 @@
             $j++;
         }   
         
-        print_array($safe_chairs); 
+        $safe_chairs = implode(', ', $safe_chairs);
+        echo '<p>Chair numbers ' . $safe_chairs . ' are safe for Goldilocks to sit at.</p>';
+
         ?>
         </div>
         
