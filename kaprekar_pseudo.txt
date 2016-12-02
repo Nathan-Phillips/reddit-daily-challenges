@@ -1,0 +1,15 @@
+pseudo
+
+start at first number and add integers to an array, up to second number
+
+for each number in the array:
+
+	square the number
+	add the result to an array
+	
+	count the number of digits in the result (array)
+	split the result (array) into two numbers
+
+	add these two numbers together
+
+	if this addition is equal to the original number, the result is true - a Kaprekar number

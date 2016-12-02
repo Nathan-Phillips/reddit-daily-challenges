@@ -41,14 +41,10 @@
             $square = $value * $value;
             $length = strlen($square);
 
-            if($length % 2 == 0){
-                $result = str_split($square, $length / 2);
-                $addition = $result[0] + $result[1];
-
-                if($addition == $value){
-                    echo 'The number ' . $value . ' is a Kaprekar number.' . '.<br>';
-                }  
-            }
+                //if($addition == $value){
+                //    echo 'The number ' . $value . ' is a Kaprekar number.' . '.<br>';
+                //}  
+            
         }
 
         ?>
