@@ -61,12 +61,13 @@
                     $num2 = implode($array1);
 
                     //echo '$num2 has the following value: ' . $num2 . '.<br>';
-
-                    $addition = $num1 + $num2;
+                    if($num1 != 0 && $num2 !=0){
+                        $addition = $num1 + $num2;
+                    }
                     //echo 'ADDITION = ' . $addition . '.<br>';
 
-                    if($addition == $value && $value % 10 !== 0){
-                        echo 'The number ' . $value . ' is a Kaprekar number.' . '.<br>';
+                    if($addition == $value){
+                        echo 'The number ' . $value . ' is a Kaprekar number.' . '<br>';
                     } 
 
                     $array1 = str_split($square);
