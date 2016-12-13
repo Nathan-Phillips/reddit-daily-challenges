@@ -32,6 +32,7 @@
         $arr1 = str_split($str1);
         $arr2 = str_split($str2);
 
+<<<<<<< HEAD
         $val1 = $arr1[1];
         $val2 = $arr2[1];
 
@@ -39,6 +40,12 @@
         print_array($val2);
 
         $arr_out = array_splice($arr1, 1, 1, $val1);
+=======
+        print_array($arr1);
+        print_array($arr2);
+
+        $arr_out = array_replace($arr1, $arr2);
+>>>>>>> origin/master
 
         print_array($arr_out);     
 
