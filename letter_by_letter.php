@@ -26,28 +26,26 @@
         }
         
         //Initial input strings
-        $str1 = 'floor';
-        $str2 = 'brake';
+        $str1 = 'a fall to the floor';
+        $str2 = 'braking the door in';
 
-        $arr1 = str_split($str1);
+        $arr1 = str_split($str1);               //Convert the input strings to arrays
         $arr2 = str_split($str2);
 
-<<<<<<< HEAD
-        $val1 = $arr1[1];
-        $val2 = $arr2[1];
+        $i = 0;
 
-        print_array($val1);
-        print_array($val2);
-
-        $arr_out = array_splice($arr1, 1, 1, $val1);
-=======
-        print_array($arr1);
-        print_array($arr2);
-
-        $arr_out = array_replace($arr1, $arr2);
->>>>>>> origin/master
-
-        print_array($arr_out);     
+        echo $str1 . '<br>';
+        
+        while($i < count($arr1)){               //Start the loop
+            if($arr1[$i] == $arr2[$i]){         //If the letter in array 2 is the same as array 1, just increment the loop counter
+                $i++;
+            } else {
+                $arr1[$i] = $arr2[$i];          //Change the letter in loop 1 to be the same as in loop 2
+                $output = implode('', $arr1);   //Convert the array to a string for output
+                echo $output . '<br>';          //Output the string
+                $i++;
+            }
+        }
 
         ?>
         </div>
